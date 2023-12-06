@@ -1,0 +1,1 @@
+1. Deal with manifest.json in public

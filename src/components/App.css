@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
