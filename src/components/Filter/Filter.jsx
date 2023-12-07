@@ -1,6 +1,8 @@
+import css from "./Filter.module.css";
+
 function Filter() {
   return (
-    <form>
+    <form className={css.filter}>
       <label>
         Car brand
         <input type="text" />
@@ -9,7 +11,7 @@ function Filter() {
         Price/ 1 hour
         <input type="text" />
       </label>
-      <div>
+      <div className={css.mileageWrapper}>
         <label>
           Сar mileage / km
           <input type="text" />

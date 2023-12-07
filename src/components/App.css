@@ -1,8 +1,9 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #1A1919;;
+    color: #FFF;
     font-size: 18px;
     font-weight: 500;
+    line-height: 1.4;
 
     font-family: 'Manrope', sans-serif;
 }
