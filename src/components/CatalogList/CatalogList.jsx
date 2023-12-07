@@ -3,7 +3,10 @@ import { selectCatalog } from '../../redux/catalog/catalogSelectors';
 
 function CatalogList() {
   const cars = useSelector(selectCatalog);
-  console.log(cars, 'cars');
+  if (cars) {
+    console.log(cars);
+  }
+
   return (
     <ul>
       <li>ulList!!!</li>

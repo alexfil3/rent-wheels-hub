@@ -7,7 +7,6 @@ const catalogSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(fetchCars.pending, state => {
-        console.log('pppp');
         state.isLoading = true;
         state.error = null;
       })
