@@ -1,0 +1,41 @@
+.dropdownWrapper {
+    border-radius: 14px;
+}
+
+.menu {
+  position: absolute;
+  top: 52px;
+  padding: 14px 18px;
+  width: 224px;
+  height: 272px;
+  color: black;
+  overflow-y: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  background: #FFF;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.button {
+  width: 125px;
+  height: 48px;    
+  border-radius: 14px;
+  background: #F7F7FB;
+  font-weight: 500;
+  line-height: 1.1;
+
+  padding-left: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+}

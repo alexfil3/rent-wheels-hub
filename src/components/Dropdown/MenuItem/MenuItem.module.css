@@ -1,0 +1,14 @@
+.item {
+  color: rgba(18, 20, 23, 0.20);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.item:hover,
+.item:focus {
+  color: #121417
+}
+
+.item:not(:last-child) {
+    margin-bottom: 8px;
+}

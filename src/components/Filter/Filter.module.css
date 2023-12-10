@@ -10,5 +10,111 @@
 }
 
 .mileageWrapper {
+  position: relative;
     display: flex;
+    width: 320px;
+    height: 48px;
+    border-radius: 14px;
+}
+
+.mileageWrapper:focus,
+.mileageWrapper:hover {
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+}
+
+.brandWrapper {
+  position: relative;
+}
+
+.priceWrapper {
+  position: relative;
+}
+
+.brand {
+  width: 224px;
+  height: 48px;
+}
+
+.brandLabel {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  width: 224px;
+  color: #8A8A89;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.price {
+  width: 125px;
+  height: 48px;
+}
+
+.priceLabel {
+  width: 125px;
+  position: absolute;
+  top: -26px;
+  left: 0;
+  color: #8A8A89;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.mileageFrom {
+  width: 160px;
+  border-radius: 14px 0 0 14px;
+  padding: 14px 24px 14px 72px;
+  font-weight: 500;
+  border-right: 1.2px solid rgba(138, 138, 137, 0.20);
+}
+
+.textFrom {
+  position: absolute;
+  left: 24px;
+  top: 14px;
+  color: #121417;
+  line-height: 1.1;
+}
+
+.mileageTo {
+  width: 160px;
+  border-radius: 0 14px 14px 0;
+  padding: 14px 24px 14px 50px;
+  font-weight: 500;
+}
+
+.textTo {
+  position: absolute;
+  right: 115px;
+  top: 14px;
+  color: #121417;
+  line-height: 1.1;
+}
+
+.mileageText {
+  position: absolute;
+  left: 0;
+  top: -26px;
+  color: #8A8A89;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.submitButton {
+  width: 136px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #3470FF;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.submitButton:hover,
+.submitButton:focus {
+  background: #0B44CD;
+  cursor: pointer;;
 }

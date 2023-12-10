@@ -1,12 +1,13 @@
-import { Routes, Route } from "react-router-dom";
-import "normalize.css";
-import Layout from "./Layout";
-import HomePage from "pages/HomePage/HomePage";
-import CatalogPage from "pages/CatalogPage/CatalogPage";
-import FavoritesPage from "pages/FavoritesPage/FavoritesPage";
-import "./App.css";
+import { Routes, Route } from 'react-router-dom';
+import 'normalize.css';
+import Layout from './Layout';
+import HomePage from 'pages/HomePage/HomePage';
+import CatalogPage from 'pages/CatalogPage/CatalogPage';
+import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
+import './App.css';
 
 function App() {
+  console.log('App child');
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
