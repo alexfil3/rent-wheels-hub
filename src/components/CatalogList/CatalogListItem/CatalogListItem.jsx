@@ -1,3 +1,8 @@
+import { useDispatch } from 'react-redux';
+import {
+  fetchCarById,
+  openModalWindow,
+} from '../../../redux/catalog/catalogOperations';
 import css from './CatalogListItem.module.css';
 
 function CatalogListItem({
@@ -12,6 +17,8 @@ function CatalogListItem({
   functionalities,
   img,
 }) {
+  const dispatch = useDispatch();
+
   const city = address.split(' ')[3].slice(0, -1);
   const country = address.split(' ')[4];
   const editedType = type.charAt(0).toUpperCase() + type.slice(1).toLowerCase();
@@ -25,6 +32,12 @@ function CatalogListItem({
 
     return accLength < currentLength ? acc : current;
   }, functionalities[0]);
+
+  const handleOpenModal = () => {
+    dispatch(fetchCarById(id));
+    dispatch(openModalWindow(true));
+    document.body.classList.add('backdrop-active');
+  };
 
   return (
     <div className={css.flexItem}>
@@ -46,7 +59,9 @@ function CatalogListItem({
         <li>{id}</li>
         <li>{feature}</li>
       </ul>
-      <button className={css.button}>Learn more</button>
+      <button className={css.button} onClick={handleOpenModal}>
+        Learn more
+      </button>
     </div>
   );
 }

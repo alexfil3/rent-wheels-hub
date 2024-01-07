@@ -7,7 +7,6 @@ import FavoritesPage from 'pages/FavoritesPage/FavoritesPage';
 import './App.css';
 
 function App() {
-  console.log('App child');
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

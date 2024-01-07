@@ -3,6 +3,10 @@
     height: 426px;
 }
 
+.flexItem:not(:nth-child(4n)) {
+    margin-right: 29px;
+}
+
 .imageWrapper {
     width: 274px;
     height: 268px;
@@ -48,4 +52,10 @@
     color: white;
     font-size: 14px;
     font-weight: 600;
+}
+
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    background: #0B44CD;
 }

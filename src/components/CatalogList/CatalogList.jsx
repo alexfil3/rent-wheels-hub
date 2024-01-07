@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCatalog } from '../../redux/catalog/catalogSelectors';
+import {
+  selectCatalog,
+  selectIsLoadMoreShown,
+} from '../../redux/catalog/catalogSelectors';
 import CatalogListItem from './CatalogListItem/CatalogListItem';
 import { fetchCars } from '../../redux/catalog/catalogOperations';
 import { useEffect, useState } from 'react';
@@ -13,6 +16,7 @@ function CatalogList() {
   const dispatch = useDispatch();
   const cars = useSelector(selectCatalog);
   const filteredCars = useSelector(selectFilteredCars);
+  const isLoadMoreshown = useSelector(selectIsLoadMoreShown);
   // const findItems = useSelector(selectFindItems);
   const [page, setPage] = useState(1);
 
@@ -58,7 +62,11 @@ function CatalogList() {
           }
         )}
       </ul>
-      <button onClick={handleLoadMore}>Load more</button>
+      {isLoadMoreshown && (
+        <button className={css.loadMoreButton} onClick={handleLoadMore}>
+          Load more
+        </button>
+      )}
     </div>
   );
 }

@@ -5,7 +5,12 @@ export const fetchAllCars = createAsyncThunk(
   'filter/fetchAllCars',
   async (formData, thunkAPI) => {
     try {
-      const { data } = await axios.get();
+      const url = new URL(
+        'https://65716ea1d61ba6fcc0128070.mockapi.io/api/v1/advert'
+      );
+      url.searchParams.append('limit', 12);
+
+      const { data } = await axios.get(url);
       let result = data;
       let minPrice = 0;
 

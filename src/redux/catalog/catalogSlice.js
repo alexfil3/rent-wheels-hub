@@ -1,9 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars, fetchFilteredCars } from './catalogOperations';
+import {
+  fetchCars,
+  fetchFilteredCars,
+  openModalWindow,
+  fetchCarById,
+} from './catalogOperations';
 
 const catalogSlice = createSlice({
   name: 'catalog',
-  initialState: { items: [], isLoading: false, error: null },
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
+    isLoadMoreShown: true,
+    isModalWindowOpen: false,
+    car: {},
+  },
   extraReducers: builder =>
     builder
       .addCase(fetchCars.pending, state => {
@@ -11,9 +23,10 @@ const catalogSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCars.fulfilled, (state, { payload }) => {
-        state.items.push(...payload);
+        state.items.push(...payload.data);
         state.isLoading = false;
         state.error = null;
+        state.isLoadMoreShown = !payload.loadMore;
       })
       .addCase(fetchFilteredCars.pending, state => {
         state.isLoading = true;
@@ -24,6 +37,13 @@ const catalogSlice = createSlice({
         state.items = payload;
         state.isLoading = false;
         state.error = null;
+      })
+      .addCase(openModalWindow.fulfilled, (state, { payload }) => {
+        state.isModalWindowOpen = payload;
+      })
+      .addCase(fetchCarById.fulfilled, (state, { payload }) => {
+        console.log(payload);
+        state.car = payload;
       }),
 });
 
