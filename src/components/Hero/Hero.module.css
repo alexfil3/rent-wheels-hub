@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 180px 128px 300px 128px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.6)), url('../../../2024_mercedes-benz_gls-class_4dr-suv_amg-gls-63_fq_oem_1_1600.avif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.title {
+    width: 600px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.heroButton {
+    width: 160px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.heroButton:hover,
+.heroButton:focus {
+    background-color: #4c4c4c;
+}

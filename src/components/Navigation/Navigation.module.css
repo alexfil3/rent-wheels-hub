@@ -24,11 +24,24 @@
   align-items: center;
   padding: 0px 8px;
   height: 100%;
+  position: relative;
 }
 
-.navLink:hover,
-.navLink:focus {
-  border-bottom: 2px solid black;
+.navLink::before {
+	content: '';
+	position: absolute;
+	left: 0; bottom: 6px;
+	width: 100%;
+	height: 2px;
+	background-color: white;
+  border-radius: 20px;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s;
+}
+
+.navLink:hover::before {
+  transform: scaleX(1);
 }
 /* 
 @media screen and (min-width: 320px) {
