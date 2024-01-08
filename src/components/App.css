@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #1A1919;;
+    background-color: black;
     color: #FFF;
     font-size: 18px;
     font-weight: 500;
@@ -32,12 +32,17 @@ button {
     border: 0;
 }
 
-h1 {
+h1, h2 {
     margin: 0;
 }
 
 p {
     margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
 }
 
 menu {

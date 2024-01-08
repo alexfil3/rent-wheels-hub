@@ -1,0 +1,20 @@
+.wrapper {
+    width: 50%;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    margin-bottom: 24px;
+    display: block;
+}
+
+.image {
+    height: 100%;
+    width: 300px;
+}
+
+.textWrapper {
+    padding: 0px 24px;
+}
