@@ -3,9 +3,9 @@
 }
 
 body {
-    background-color: black;
-    color: #FFF;
-    font-size: 18px;
+    background-color: #1b1b1d;
+    color: #e3e3e3;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.4;
 
@@ -32,7 +32,7 @@ button {
     border: 0;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin: 0;
 }
 

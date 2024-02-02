@@ -48,7 +48,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 12px;
-    background: #3470FF;
+    background: #6d1cac;
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -57,5 +57,5 @@
 .button:hover,
 .button:focus {
     cursor: pointer;
-    background: #0B44CD;
+    background: #ba8fff;
 }

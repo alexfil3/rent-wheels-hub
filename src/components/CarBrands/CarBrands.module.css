@@ -11,9 +11,11 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 52px;
+    column-gap: 52px;
+    row-gap: 24px;
+    justify-content: center;
 }
 
 .container {
-    padding: 0px 128px;
+    padding: 24px 128px;
 }
