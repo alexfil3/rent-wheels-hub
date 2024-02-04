@@ -1,6 +1,7 @@
 .header {
   background-color: #242526;
-  padding: 8.5px 17px
+  padding: 8.5px 17px;
+  z-index: 9999;
 }
 
 .sticky {

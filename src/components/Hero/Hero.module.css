@@ -28,7 +28,7 @@
     justify-content: center;
     background-color: #242526;
     border-radius: 20px;
-    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 
 .heroButton:hover,
