@@ -42,7 +42,7 @@ function CatalogListItem({
   return (
     <div className={css.flexItem}>
       <div className={css.imageWrapper}>
-        <img src={img} alt={model} />
+        <img className={css.image} src={img} alt={model} />
       </div>
       <div className={css.labelWrapper}>
         <p>

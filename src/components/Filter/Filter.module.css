@@ -11,10 +11,11 @@
 
 .mileageWrapper {
   position: relative;
-    display: flex;
-    width: 320px;
-    height: 48px;
-    border-radius: 14px;
+  display: flex;
+  width: 320px;
+  height: 48px;
+  border-radius: 14px;
+  transition: box-shadow 0.3s;
 }
 
 .mileageWrapper:focus,
@@ -111,10 +112,11 @@
   color: #FFF;
   font-size: 14px;
   font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .submitButton:hover,
 .submitButton:focus {
-  background: #ba8fff;
+  background-color: #ba8fff;
   cursor: pointer;;
 }

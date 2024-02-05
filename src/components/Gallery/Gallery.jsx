@@ -70,12 +70,11 @@ function Gallery() {
           enableMouseEvents
         >
           {cars.map((step, index) => (
-            <div
-              key={step.id}
-            >
+            <div key={step.id}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
                   component="img"
+                  className={css.image}
                   sx={{
                     height: 400,
                     display: 'block',

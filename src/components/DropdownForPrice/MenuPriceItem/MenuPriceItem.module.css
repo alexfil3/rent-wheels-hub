@@ -1,7 +1,8 @@
 .item {
-  color: rgba(18, 20, 23, 0.20);
+  color: rgba(18, 20, 23, 0.6);
   font-size: 16px;
   line-height: 1.25;
+  transition: color 0.3s;
 }
 
 .item:hover,

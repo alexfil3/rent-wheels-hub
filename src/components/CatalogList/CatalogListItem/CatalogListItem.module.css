@@ -8,6 +8,7 @@
 }
 
 .imageWrapper {
+    overflow: hidden;
     width: 274px;
     height: 268px;
     border-radius: 14px;
@@ -23,7 +24,7 @@
 }
 
 .model {
-    color: #3470FF;
+    color: #ba8fff;
 }
 
 .characteristics {
@@ -52,10 +53,17 @@
     color: white;
     font-size: 14px;
     font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 .button:hover,
 .button:focus {
     cursor: pointer;
-    background: #ba8fff;
+    background-color: #ba8fff;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;	
 }

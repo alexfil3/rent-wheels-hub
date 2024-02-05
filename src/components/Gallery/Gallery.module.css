@@ -17,3 +17,7 @@
     white-space: nowrap;
     clip-path: inset(100%);
 }
+
+.image {
+    object-fit: cover;
+}
