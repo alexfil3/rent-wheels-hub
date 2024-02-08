@@ -6,7 +6,6 @@ export const fetchCarsForGallery = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get();
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

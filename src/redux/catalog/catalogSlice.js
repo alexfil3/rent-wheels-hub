@@ -33,7 +33,6 @@ const catalogSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchFilteredCars.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.items = payload;
         state.isLoading = false;
         state.error = null;
@@ -42,7 +41,6 @@ const catalogSlice = createSlice({
         state.isModalWindowOpen = payload;
       })
       .addCase(fetchCarById.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.car = payload;
       }),
 });

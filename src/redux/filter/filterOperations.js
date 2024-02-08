@@ -15,12 +15,10 @@ export const fetchAllCars = createAsyncThunk(
       let minPrice = 0;
 
       if (formData.brand !== '' && formData.brand !== 'All') {
-        console.log('brand');
         result = result.filter(({ make }) => make === formData.brand);
       }
 
       if (formData.price !== '' && formData.price >= minPrice) {
-        console.log('price');
         result = result.filter(({ rentalPrice }) => {
           const price = Number(rentalPrice.slice(1));
           return (
@@ -29,22 +27,17 @@ export const fetchAllCars = createAsyncThunk(
         });
       }
       if (formData.mileageFrom !== '') {
-        console.log('mileageFrom');
         result = result.filter(
           ({ mileage }) => mileage >= Number(formData.mileageFrom)
         );
       }
       if (formData.mileageTo !== '') {
-        console.log('mileageTo');
         result = result.filter(({ mileage }) => mileage <= formData.mileageTo);
       }
-
-      console.log('result', result);
 
       return result.length === 0
         ? { result, foundItems: false }
         : { result, foundItems: true };
-      // return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -55,7 +48,6 @@ export const changeFilterValue = createAsyncThunk(
   'filter/changeFilterValue',
   async (value, thunkAPI) => {
     try {
-      console.log(value);
       return value;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

@@ -1,22 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import icon from '../../images/svg-sprite.svg';
 import css from './Navigation.module.css';
-import { useEffect, useState } from 'react';
 
 function Navigation() {
-  // const [current, setCurrent] = useState();
-  // const currentPath = window.location.pathname;
-
-  // useEffect(() => {
-  //   setCurrent(currentPath);
-  //   console.log(current);
-  // }, [current, currentPath]);
-
-  // const onClick = () => {
-  //   const currentPath = window.location.pathname;
-  //   setCurrent(currentPath);
-  // };
-
   return (
     <nav className={css.nav}>
       <div className={css.container}>
@@ -35,7 +21,6 @@ function Navigation() {
                 isActive ? `${css.navLink} ${css.linkActive}` : css.navLink
               }
               to="/"
-              // onClick={onClick}
             >
               Home
             </NavLink>
@@ -46,7 +31,6 @@ function Navigation() {
                 isActive ? `${css.navLink} ${css.linkActive}` : css.navLink
               }
               to="/catalog"
-              // onClick={onClick}
             >
               Catalog
             </NavLink>
@@ -57,7 +41,6 @@ function Navigation() {
                 isActive ? `${css.navLink} ${css.linkActive}` : css.navLink
               }
               to="/favorites"
-              // onClick={onClick}
             >
               Favorites
             </NavLink>

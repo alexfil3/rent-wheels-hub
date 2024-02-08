@@ -27,7 +27,6 @@ export const fetchFilteredCars = createAsyncThunk(
   'catalog/fetchFilteredCars',
   async (_, thunkAPI) => {
     try {
-      console.log('fetch data filtered');
       const { data } = await axios.get();
       return data;
     } catch (error) {
@@ -51,15 +50,9 @@ export const fetchCarById = createAsyncThunk(
   'catalog/fetchCarById',
   async (id, thunkAPI) => {
     try {
-      console.log(id);
-      // const url = new URL(
-
-      // );
-
       const { data } = await axios.get(
         `https://65716ea1d61ba6fcc0128070.mockapi.io/api/v1/advert/${id}`
       );
-      console.log(data);
 
       return data;
     } catch (error) {

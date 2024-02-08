@@ -20,9 +20,9 @@
 }
 
 .svg {
-    fill: #333;
-    width: 60px;
-    height: 60px;
+  fill: #333;
+  width: 60px;
+  height: 60px;
 }
 
 .iconWrapper {
@@ -54,10 +54,6 @@
   position: relative;
 }
 
-/* .linkActive {
-} */
-
-
 .navLink::before {
 	content: '';
 	position: absolute;
@@ -76,19 +72,3 @@
  {
   transform: scaleX(1);
 }
-/* 
-@media screen and (min-width: 320px) {
-    width: 320px;
-  }
-
-  @media screen and (min-width: 834px) {
-    width: 834px;
-    padding-left: 27px;
-    padding-right: 27px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1440px;
-    padding-left: 34px;
-    padding-right: 34px;
-  } */

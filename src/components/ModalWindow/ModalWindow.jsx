@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ModalWindow.module.css';
 import { openModalWindow } from '../../redux/catalog/catalogOperations';
 import { selectCar } from '../../redux/catalog/catalogSelectors';
+import icon from '../../images/svg-sprite.svg';
 
 function ModalWindow() {
   const dispatch = useDispatch();
@@ -14,66 +16,72 @@ function ModalWindow() {
     }
   };
 
-  const city = car.address.split(' ')[3].slice(0, -1);
-  // const country = car.address.split(' ')[4];
-  // const editedType =
-  //   car.type.charAt(0).toUpperCase() + car.type.slice(1).toLowerCase();
+  const handleKeyDown = e => {
+    if (e.key === 'Escape') {
+      dispatch(openModalWindow(false));
+    }
+  };
 
-  // const inputString = car.rentalConditions;
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
 
-  // const ageRegex = /Minimum age: (\d+)/;
-  // const ageMatch = inputString.match(ageRegex);
-  // const minimumAge = ageMatch ? ageMatch[1] : null;
-
-  // const requirements = inputString
-  //   .split('\n')
-  //   .filter(line => !line.startsWith('Minimum age:'))
-  //   .map(line => line.trim())
-  //   .filter(line => line !== '');
-
-  // const mileageEdited =
-  //   String(car.mileage).slice(0, 1) + ',' + String(car.mileage).slice(1);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  });
 
   return (
     <div className={css.backdrop} onClick={e => handleBackgroundClick(e)}>
       <div className={css.box}>
-        <div className={css.close}>{car.make}</div>
-        <div className={css.imgWrapper}></div>
+        <div className={css.close}>
+          <svg className={css.svg}>
+            <use href={`${icon}#icon-mercedes`} />
+          </svg>
+        </div>
+        <div className={css.imgWrapper}>
+          <img className={css.image} src={car.img} alt={car.model} />
+        </div>
         <p className={css.name}>
           {car.make} <span className={css.model}>{car.model}</span>, {car.year}
         </p>
         <ul className={css.list}>
-          <li>{city}</li>
-          <li>{/* {country} */}</li>
+          <li>{car.address}</li>
           <li>Id: {car.id}</li>
           <li>Year: {car.year}</li>
-          <li>Type: {/* {editedType} */}</li>
+          <li>Type: {car.type}</li>
           <li>Fuel Consumption: {car.fuelConsumption} </li>
           <li>Engine Size: {car.engineSize}</li>
         </ul>
         <p className={css.description}>{car.description}</p>
         <p className={css.access}>Accessories and functionalities:</p>
         <ul className={css.listTwo}>
-          <li>{/* {car.accessories[0]} */}</li>
-          <li>{/* {car.accessories[1]} */}</li>
-          <li>{/* {car.accessories[2]} */}</li>
+          {car.accessories.map(item => {
+            return <li key={car.id}>{item}</li>;
+          })}
         </ul>
         <ul className={css.listTwo}>
-          <li>{/* {car.functionalities[0]} */}</li>
-          <li>{/* {car.functionalities[1]} */}</li>
-          <li>{/* {car.functionalities[2]} */}</li>
+          {car.functionalities.map(item => {
+            return <li key={car.id}>{item}</li>;
+          })}
         </ul>
         <p className={css.access}>Rental Conditions: </p>
         <ul className={css.rent}>
           <li>
-            Minimum age: <span className={css.age}>{/* {minimumAge} */}</span>
+            Minimum age:{' '}
+            <span className={css.age}>
+              {car.rentalConditions.slice(13, 15)}
+            </span>
           </li>
-          <li>{/* {requirements[0]} */}</li>
-          <li>{/* {requirements[1]} */}</li>
+          <li>{car.rentalConditions.slice(16, 38)}</li>
+          <li>{car.rentalConditions.slice(39)}</li>
           <li>
-            Mileage: <span className={css.age}>{/* {mileageEdited} */}</span>
+            Mileage: <span className={css.age}>{car.mileage}</span>
+          </li>
+          <li>
+            Price: <span className={css.age}>{car.rentalPrice}</span>
           </li>
         </ul>
+        <a className={css.tel} href="tel:+380508074755">
+          Rental car
+        </a>
       </div>
     </div>
   );

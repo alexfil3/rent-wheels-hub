@@ -6,18 +6,14 @@ import {
 import CatalogListItem from './CatalogListItem/CatalogListItem';
 import { fetchCars } from '../../redux/catalog/catalogOperations';
 import { useEffect, useState } from 'react';
-import {
-  selectFilteredCars,
-  selectFindItems,
-} from '../../redux/filter/filterSelectors';
+import { selectFilteredCars } from '../../redux/filter/filterSelectors';
 import css from './CatalogList.module.css';
 
 function CatalogList() {
   const dispatch = useDispatch();
   const cars = useSelector(selectCatalog);
   const filteredCars = useSelector(selectFilteredCars);
-  const isLoadMoreshown = useSelector(selectIsLoadMoreShown);
-  // const findItems = useSelector(selectFindItems);
+  const isLoadMoreShown = useSelector(selectIsLoadMoreShown);
   const [page, setPage] = useState(1);
 
   const handleLoadMore = async () => {
@@ -62,7 +58,7 @@ function CatalogList() {
           }
         )}
       </ul>
-      {isLoadMoreshown && (
+      {isLoadMoreShown && (
         <button className={css.loadMoreButton} onClick={handleLoadMore}>
           Load more
         </button>

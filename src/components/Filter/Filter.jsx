@@ -18,7 +18,6 @@ function Filter() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(formData);
     dispatch(fetchAllCars(formData));
   };
 

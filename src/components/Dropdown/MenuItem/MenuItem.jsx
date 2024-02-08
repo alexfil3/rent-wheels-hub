@@ -9,7 +9,6 @@ import { selectFormData } from '../../../redux/filter/filterSelectors';
 function MenuItem(props, ref) {
   const dispatch = useDispatch();
   const formData = useSelector(selectFormData);
-  // const { active, disabled, children, ...rest } = props;
 
   const handleClick = e => {
     dispatch(

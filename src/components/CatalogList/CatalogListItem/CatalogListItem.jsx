@@ -4,6 +4,7 @@ import {
   openModalWindow,
 } from '../../../redux/catalog/catalogOperations';
 import css from './CatalogListItem.module.css';
+import icon from '../../../images/svg-sprite.svg';
 
 function CatalogListItem({
   year,
@@ -34,13 +35,15 @@ function CatalogListItem({
   }, functionalities[0]);
 
   const handleOpenModal = () => {
-    dispatch(fetchCarById(id));
-    dispatch(openModalWindow(true));
+    dispatch(fetchCarById(id)).then(() => dispatch(openModalWindow(true)));
     document.body.classList.add('backdrop-active');
   };
 
   return (
     <div className={css.flexItem}>
+      <svg className={css.svg}>
+        <use href={`${icon}#icon-mercedes`} />
+      </svg>
       <div className={css.imageWrapper}>
         <img className={css.image} src={img} alt={model} />
       </div>

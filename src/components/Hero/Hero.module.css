@@ -15,23 +15,23 @@
 }
 
 .title {
-    width: 600px;
-    text-align: center;
-    font-size: 40px;
+  width: 600px;
+  text-align: center;
+  font-size: 40px;
 }
 
 .heroButton {
-    width: 160px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #242526;
-    border-radius: 20px;
-    transition: color 0.3s;
+  width: 160px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242526;
+  border-radius: 20px;
+  transition: color 0.3s;
 }
 
 .heroButton:hover,
 .heroButton:focus {
-    color: #ba8fff;
+  color: #ba8fff;
 }

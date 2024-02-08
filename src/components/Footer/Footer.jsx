@@ -54,12 +54,6 @@ function Footer() {
         </ul>
       </div>
       <p>Copyright &copy; 2023-2024 Alex Filimonov</p>
-      {/* <a
-        className={css.link}
-        target="_blank"
-        href="https://github.com/alexfil3"
-        rel="noopener noreferrer"
-      ></a> */}
     </footer>
   );
 }

@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarsForGallery } from '../../redux/gallery/galleryOperations';
 import { selectCarsForGallery } from '../../redux/gallery/gallerySelectors';
-//
 import { useTheme } from '@mui/material/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
@@ -60,9 +58,7 @@ function Gallery() {
             pl: 2,
             bgcolor: '#1b1b1d',
           }}
-        >
-          {/* cars && <Typography>{cars[activeStep].make}</Typography> */}
-        </Paper>
+        ></Paper>
         <AutoPlaySwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={activeStep}

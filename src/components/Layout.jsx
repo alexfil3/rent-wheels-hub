@@ -5,13 +5,13 @@ import Footer from './Footer/Footer';
 
 function Layout() {
   return (
-    <>
+    <div>
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
       <Footer />
-    </>
+    </div>
   );
 }
 

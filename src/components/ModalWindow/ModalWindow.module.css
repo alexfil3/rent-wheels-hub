@@ -1,31 +1,49 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(18, 20, 23, 0.50);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 20, 23, 0.50);
+  z-index: 999999;
 }
 
 .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 542px;
-    height: 700px;
-    border-radius: 24px;
-    background: #FFF;
-    padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 542px;
+  height: 650px;
+  border-radius: 14px;
+  background: #FFF;
+  padding: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.box::-webkit-scrollbar {
+  width: 28px;
+  border: 10px solid white;
+  border-radius: 0px 14px 14px 0px;
+  height: 200px;
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: #6d1cac;
+  border-radius: 14px;
+  border: 10px solid white;
 }
 
 .close {
   width: 20px;
   height: 20px;
   position: absolute;
-  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 16px;
-  right: 16px;
+  right: 0px;
 }
 
 .imgWrapper {
@@ -33,6 +51,7 @@
   height: 248px;
   background: linear-gradient(180deg, rgba(18, 20, 23, 0.50) 2.5%, rgba(18, 20, 23, 0.00) 41.07%), #F3F3F2;
   border-radius: 14px;
+  overflow: hidden;
 }
 
 .name {
@@ -42,7 +61,7 @@
 }
 
 .model {
-  color: #3470FF;
+  color: #6d1cac;
 }
 
 .list {
@@ -60,15 +79,15 @@
 .description {
   margin-top: 14px;
   color: #121417;
-font-size: 14px;
-font-weight: 400;
-line-height: 1.42;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
 }
 
 .access {
-color: #121417;
-font-size: 14px;
-margin-top: 24px;
+  color: #121417;
+  font-size: 14px;
+  margin-top: 24px;
 }
 
 .listTwo {
@@ -86,13 +105,48 @@ margin-top: 24px;
 .rent {
   margin-top: 15px;
   color: #363535;
-font-size: 12px;
-font-weight: 400;
-line-height: 1.5;
-display: flex;
-gap: 36px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
 }
 
 .age {
-  color: #3470FF;
+  color: #6d1cac;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 38px;
+  background-color: #6d1cac;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.tel:hover,
+.tel:focus {
+  background-color: #ba8fff;
+  cursor: pointer;
+}
+
+.svg {
+  fill: #333;
+  width: 20px;
+  height: 20px;
+  transition: fill 0.3s
+}
+
+.svg:hover {
+  fill: #ba8fff;
 }
