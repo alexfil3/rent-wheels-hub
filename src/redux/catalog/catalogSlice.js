@@ -4,12 +4,14 @@ import {
   fetchFilteredCars,
   openModalWindow,
   fetchCarById,
+  addToFavorite,
 } from './catalogOperations';
 
 const catalogSlice = createSlice({
   name: 'catalog',
   initialState: {
     items: [],
+    favorite: [],
     isLoading: false,
     error: null,
     isLoadMoreShown: true,
@@ -42,6 +44,9 @@ const catalogSlice = createSlice({
       })
       .addCase(fetchCarById.fulfilled, (state, { payload }) => {
         state.car = payload;
+      })
+      .addCase(addToFavorite.fulfilled, (state, { payload }) => {
+        state.favorite.push(payload);
       }),
 });
 

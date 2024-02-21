@@ -60,3 +60,18 @@ export const fetchCarById = createAsyncThunk(
     }
   }
 );
+
+export const addToFavorite = createAsyncThunk(
+  'catalog/addToFavorite',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await axios.get(
+        `https://65716ea1d61ba6fcc0128070.mockapi.io/api/v1/advert/${id}`
+      );
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

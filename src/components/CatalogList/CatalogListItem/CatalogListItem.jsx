@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import {
+  addToFavorite,
   fetchCarById,
   openModalWindow,
 } from '../../../redux/catalog/catalogOperations';
@@ -39,9 +40,13 @@ function CatalogListItem({
     document.body.classList.add('backdrop-active');
   };
 
+  const handleAddToFavorite = id => {
+    dispatch(addToFavorite(id));
+  };
+
   return (
     <div className={css.flexItem}>
-      <svg className={css.svg}>
+      <svg className={css.svg} onClick={() => handleAddToFavorite(id)}>
         <use href={`${icon}#icon-mercedes`} />
       </svg>
       <div className={css.imageWrapper}>
